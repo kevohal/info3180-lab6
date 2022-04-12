@@ -1,8 +1,12 @@
 <template>
     <ul class="news__list">
-        <li class="news__item">News item 1</li>
-        <li class="news__item">News item 2</li>
-        <li class="news__item">News item 3</li>
+        <li v-for="article in articles" class="news__item">
+            <!-- <img :src="image" class="news__item"/> -->
+            <!-- {{ image }} -->
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.description}}</p>
+
+        </li>
     </ul>
 </template>
 
@@ -10,10 +14,17 @@
 
 export default {
     data() {
-        return {};
+        return {
+            articles: [],
+            // image: {image: url(article.urlToImage)}
+        };
+            
+        
 
         },
         created() {
+            let self = this;
+
             fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=fb043ad247004c06b50523a5db684dd0' ,
     {
         headers: {
@@ -25,8 +36,8 @@ export default {
             })
             .then(function(data) {
                 console.log(data);
+                self.articles = data.articles;
             });
         }
-//     Authorization: fb043ad247004c06b50523a5db684dd0
 }
 </script>
