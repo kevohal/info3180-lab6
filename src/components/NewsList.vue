@@ -17,7 +17,7 @@
         <li v-for="article in articles" :key="article.url" class="news__item">
             <img :src="article.urlToImage" class="news__item"/> 
             <h5>{{ article.title }}</h5>
-            <p>{{ article.description }}</p> 
+            <p class="para">{{ article.description }}</p> 
         </li>
     </ul>
 
@@ -73,22 +73,36 @@ export default {
 <style>
     ul {   
         display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill,minmax(260px, 1fr));
         row-gap: 10px;
         column-gap: 10px;
         list-style-type: none;
     } 
 
     .news__item {
-        border: solid black 1px; 
+        border: solid grey 1px; 
         margin: 15px;
         border-bottom-left-radius: 5%;
         border-bottom-right-radius: 5%;
+        border-bottom: solid aqua 5px;
+        box-shadow: 3px;
     }
 
     img.news__item {
         height: 200px;
-        width: 200px;
+        width: 278px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border: 0px;
+        align-items: center;
+        margin: 0;
+        border-left: 0;
+        padding: 0;
+        
     }
 
+    h5, p.para {
+        margin: 5px;
+        padding: 5px;
+    }
 </style>
