@@ -1,5 +1,5 @@
 <script>
-import NewsList from '@/components/NewsList.vue'
+// import NewsList from '@/components/NewsList.vue'
 
 export default {
     data() {
@@ -7,7 +7,7 @@ export default {
             message: "Bonjour tout le monde! Welcome to VueJS"
         };
     },
-    components: { NewsList }
+//     components: { NewsList }
 }
 </script>
 
@@ -16,7 +16,7 @@ export default {
       <div class="text-center">
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
         <h1>{{ message }}</h1>
-        <NewsList />
+        <!-- <NewsList /> -->
       </div>
     </div>
 </template>

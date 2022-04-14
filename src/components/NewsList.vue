@@ -17,7 +17,7 @@
         <li v-for="article in articles" :key="article.url" class="news__item">
             <img :src="article.urlToImage" class="news__item"/> 
             <h5>{{ article.title }}</h5>
-            <p>{{ article.description}}</p> 
+            <p>{{ article.description }}</p> 
         </li>
     </ul>
 
